@@ -1,22 +1,22 @@
 #include <GL/glut.h>
 #include <stdio.h>
-float teapotX=0,teapotY=0; ///¯ù³ı®y¼Ğ
+float teapotX=0,teapotY=0; ///èŒ¶å£ºåº§æ¨™
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glPushMatrix();  ///¯x°}³Æ¥÷
-        glTranslatef(teapotX,teapotY,0);  ///·ÓµÛ®y¼Ğ²¾°Ê
+    glPushMatrix();  ///çŸ©é™£å‚™ä»½
+        glTranslatef(teapotX,teapotY,0);  ///ç…§è‘—åº§æ¨™ç§»å‹•
         glutSolidTeapot(0.3);
-    glPopMatrix();   ///¯x°}ÁÙ­ì
+    glPopMatrix();   ///çŸ©é™£é‚„åŸ
     glEnd();
     glutSwapBuffers();
 }
 
-void motion(int x,int y)   ///mouse ²¾°Êªº¨ç¦¡
+void motion(int x,int y)   ///æ»‘é¼ ç§»å‹•çš„å‡½å¼
 {
-    teapotX= (x-150)/150.0;  ///§â¯ù³ıªº¦ì¸m´«ºâ¦¨®y¼Ğ
+    teapotX= (x-150)/150.0;  ///æŠŠèŒ¶å£ºçš„ä½ç½®æ›ç®—æˆåº§æ¨™
     teapotY=-(y-150)/150.0;
-    display();   ///µe­±§ó·s
+    display();   ///ç•«é¢æ›´æ–°
 }
 
 int main(int argc,char **argv)
