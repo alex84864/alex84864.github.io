@@ -1,16 +1,16 @@
 #include <GL/glut.h>
 void display()
 {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);  ///²MªÅ
-    glutSolidTeapot(0.3);   ///¹ê¤ß¯ù³ı
-    glutSwapBuffers();  ///¥æ´«¨â­¿ªºBuffers
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);  ///æ¸…ç©º
+    glutSolidTeapot(0.3);   ///å¯¦å¿ƒèŒ¶å£º
+    glutSwapBuffers();  ///äº¤æ›å…©å€çš„Buffers
 }
-int main(int argc,char **argv)  /// ¥H«e¬Oint main()
+int main(int argc,char **argv)  /// ä»¥å‰æ˜¯int main()
 {
-    glutInit(&argc,argv);   ///1.ªì©l³]©w
-    glutInitDisplayMode(GLUT_DOUBLE |GLUT_DEPTH);   ///2.Åã¥Ü¼Ò¦¡
-    glutCreateWindow("08160971 ¥¤³Ì¤jªº©f¤l");   ///3.¶}µøµ¡
+    glutInit(&argc,argv);   ///1.åˆå§‹è¨­å®š
+    glutInitDisplayMode(GLUT_DOUBLE |GLUT_DEPTH);   ///2.é¡¯ç¤ºæ¨¡å¼
+    glutCreateWindow("08160422");   ///3.é–‹è¦–çª—
 
-    glutDisplayFunc(display);   ///4.µ¥¤@¤U­nÅã¥Üªº¨ç¦¡
-    glutMainLoop();  ///5.¥D­n°j°é
+    glutDisplayFunc(display);   ///4.ç­‰ä¸€ä¸‹è¦é¡¯ç¤ºçš„å‡½å¼
+    glutMainLoop();  ///5.ä¸»è¦è¿´åœˆ
 }
