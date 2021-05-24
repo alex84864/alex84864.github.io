@@ -12,29 +12,29 @@ void display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    glPushMatrix(); ///¥ª¥bÃä
-        glTranslatef(-0.25,0,0);///(3)§â¥¿½Tªº¤âÁu±¾¦bªÓÃö¸`
-        glRotatef(angle,0,0,1); ///(2)Âà°Ê
-        glTranslatef(-0.25,0,0); ///(1)±ÛÂà¤¤¤ß
-        hand();///¤W¤âÁu
+    glPushMatrix(); ///å·¦åŠé‚Š
+        glTranslatef(-0.25,0,0);///(3)æŠŠæ­£ç¢ºçš„æ‰‹è‡‚æ›åœ¨è‚©é—œç¯€
+        glRotatef(angle,0,0,1); ///(2)è½‰å‹•
+        glTranslatef(-0.25,0,0); ///(1)æ—‹è½‰ä¸­å¿ƒ
+        hand();///ä¸Šæ‰‹è‡‚
         glPushMatrix();
-            glTranslatef(-0.25,0,0);///(3)§â¥¿½Tªº¤âÁu±¾¦bªÓ¤W
-            glRotatef(angle,0,0,1); ///(2)Âà°Ê
-            glTranslatef(-0.25,0,0); ///(1)±ÛÂà¤¤¤ß
-            hand();///¤U¤â¨y
+            glTranslatef(-0.25,0,0);
+            glRotatef(angle,0,0,1); 
+            glTranslatef(-0.25,0,0); 
+            hand();///ä¸‹æ‰‹è‚˜
         glPopMatrix();
     glPopMatrix();
 
-     glPushMatrix(); ///¥k¥bÃä
-        glTranslatef(+0.25,0,0);///(3)§â¥¿½Tªº¤âÁu±¾¦bªÓÃö¸`
-        glRotatef(-angle,0,0,1); ///(2)Âà°Ê
-        glTranslatef(+0.25,0,0); ///(1)±ÛÂà¤¤¤ß
-        hand();///¤W¤âÁu
+     glPushMatrix(); ///å³åŠé‚Š
+        glTranslatef(+0.25,0,0);
+        glRotatef(-angle,0,0,1);
+        glTranslatef(+0.25,0,0); 
+        hand();///ä¸Šæ‰‹è‡‚
         glPushMatrix();
-            glTranslatef(+0.25,0,0);///(3)§â¥¿½Tªº¤âÁu±¾¦bªÓ¤W
-            glRotatef(-angle,0,0,1); ///(2)Âà°Ê
-            glTranslatef(+0.25,0,0); ///(1)±ÛÂà¤¤¤ß
-            hand();///¤U¤â¨y
+            glTranslatef(+0.25,0,0);
+            glRotatef(-angle,0,0,1);
+            glTranslatef(+0.25,0,0); 
+            hand();///ä¸‹æ‰‹è‚˜
         glPopMatrix();
     glPopMatrix();
 
@@ -46,7 +46,7 @@ int main(int argc,char **argv)
 {
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_DOUBLE |GLUT_DEPTH);
-    glutCreateWindow("Week06 08160971");
+    glutCreateWindow("Week06 08160422");
 
     glutIdleFunc(display);
     glutDisplayFunc(display);
