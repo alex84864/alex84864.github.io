@@ -1,11 +1,11 @@
 #include <GL/glut.h>
 #include <stdio.h>
-float vx[2000],vy[2000];  ///·Ç³Æ¤@°ï³»ÂI¡Aµ¥¤@¤U­nµe!!! ®y¼Ğ¤¶©ó-1 ~1¤§¶¡
-int N=0; //¦³N­Ó³»ÂI
+float vx[2000],vy[2000];  ///æº–å‚™ä¸€å †é ‚é»ï¼Œç­‰ä¸€ä¸‹è¦ç•«!!! åº§æ¨™ä»‹æ–¼-1 ~1ä¹‹é–“
+int N=0; //æœ‰Nå€‹é ‚é»
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glBegin(GL_LINE_LOOP); //µe½u
+    glBegin(GL_LINE_LOOP); //ç•«ç·š
     for(int i=0;i<N;i++){
         glVertex2f(vx[i],vy[i]);
     }
@@ -14,11 +14,11 @@ void display()
 }
 void motion(int x,int y)   ///mouse
 {
-    printf("%d %d\n",x,y); //§â³»ÂI°O°_¨Ó...µ¥¤@¤U­nµe
+    printf("%d %d\n",x,y); //é ‚é»
     vx[N]= (x-150)/150.0;
     vy[N]=-(y-150)/150.0;
     N++;
-    display(); //§ó·sµe­±
+    display(); //æ›´æ–°ç•«é¢
 }
 int main(int argc,char **argv)
 {
@@ -26,6 +26,6 @@ int main(int argc,char **argv)
     glutInitDisplayMode(GLUT_DOUBLE |GLUT_DEPTH);
     glutCreateWindow("Week05 drawing");
     glutDisplayFunc(display);
-    glutMotionFunc(motion); //¦b°Ê(©ì¦²)/¦bµe
+    glutMotionFunc(motion); //åœ¨å‹•(æ‹–æ›³)/åœ¨ç•«
     glutMainLoop();
 }
