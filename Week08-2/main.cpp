@@ -1,33 +1,32 @@
-#include <opencv/highgui.h> ///¨Ï¥Î OpenCV 2.1 ¤ñ¸ûÂ²³æ, ¥u­n¥Î High GUI §Y¥i
+#include <opencv/highgui.h> ///ä½¿ç”¨ OpenCV 2.1 æ¯”è¼ƒç°¡å–®, åªè¦ç”¨ High GUI å³å¯
 #include <opencv/cv.h>
 #include <GL/glut.h>
 GLUquadric * quad;///TODO: Quad
-void init()///copy ¦Û http://hackmd.io/@jsyeh/opengl
+void init()///copy è‡ª http://hackmd.io/@jsyeh/opengl
 {
-    IplImage * img = cvLoadImage("earth.jpg"); ///OpenCVÅª¹Ï
-    cvCvtColor(img,img, CV_BGR2RGB); ///OpenCVÂà¦â±m (»İ­ncv.h)
-    glEnable(GL_TEXTURE_2D); ///1. ¶}±Ò¶K¹Ï¥\¯à
-    GLuint id; ///·Ç³Æ¤@­Ó unsigned int ¾ã¼Æ, ¥s ¶K¹ÏID
-    glGenTextures(1, &id); /// ²£¥ÍGenerate ¶K¹ÏID
-    glBindTexture(GL_TEXTURE_2D, id); ///¸j©wbind ¶K¹ÏID
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); /// ¶K¹Ï°Ñ¼Æ, ¶W¹L¥]¸Ëªº½d¹ÏT, ´N­«ÂĞ¶K¹Ï
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT); /// ¶K¹Ï°Ñ¼Æ, ¶W¹L¥]¸Ëªº½d¹ÏS, ´N­«ÂĞ¶K¹Ï
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST); /// ¶K¹Ï°Ñ¼Æ, ©ñ¤j®Éªº¤º´¡, ¥Î³ÌªñÂI
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); /// ¶K¹Ï°Ñ¼Æ, ÁY¤p®Éªº¤º´¡, ¥Î³ÌªñÂI
+    IplImage * img = cvLoadImage("888.jpg"); ///OpenCVè®€åœ–
+    cvCvtColor(img,img, CV_BGR2RGB); ///OpenCVè½‰è‰²å½© (éœ€è¦cv.h)
+    glEnable(GL_TEXTURE_2D); ///1. é–‹å•Ÿè²¼åœ–åŠŸèƒ½
+    GLuint id; ///æº–å‚™ä¸€å€‹ unsigned int æ•´æ•¸, å« è²¼åœ–ID
+    glGenTextures(1, &id); /// ç”¢ç”ŸGenerate è²¼åœ–ID
+    glBindTexture(GL_TEXTURE_2D, id); ///ç¶å®šbind è²¼åœ–ID
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); /// è²¼åœ–åƒæ•¸, è¶…éåŒ…è£çš„ç¯„åœ–T, å°±é‡è¦†è²¼åœ–
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT); /// è²¼åœ–åƒæ•¸, è¶…éåŒ…è£çš„ç¯„åœ–S, å°±é‡è¦†è²¼åœ–
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST); /// è²¼åœ–åƒæ•¸, æ”¾å¤§æ™‚çš„å…§æ’, ç”¨æœ€è¿‘é»
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); /// è²¼åœ–åƒæ•¸, ç¸®å°æ™‚çš„å…§æ’, ç”¨æœ€è¿‘é»
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, img->width, img->height, 0, GL_RGB, GL_UNSIGNED_BYTE, img->imageData);
     quad = gluNewQuadric();///TODO: Quad
-}   ///³Ì«á¤@¦æ³ÌÃø/³Ì­«­n, ©Ò¶K¹Ï¼v¹³ªº¸ê®Æ³£³]©w¦n
+}   ///æœ€å¾Œä¸€è¡Œæœ€é›£/æœ€é‡è¦, æ‰€è²¼åœ–å½±åƒçš„è³‡æ–™éƒ½è¨­å®šå¥½
 float angle=0;///TODO:
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glPushMatrix();///¦Û°ÊÂà«Ü«Ó///TODO:
+    glPushMatrix();///è‡ªå‹•è½‰å¾ˆå¸¥///TODO:
         glRotatef(90, 1,0,0);///TODO:
-        glRotatef(angle, 0,0,1);///¦Û°ÊÂà«Ü«Ó///TODO:
+        glRotatef(angle, 0,0,1);///è‡ªå‹•è½‰å¾ˆå¸¥///TODO:
         gluQuadricTexture(quad, 1);///TODO:
         gluSphere(quad, 0.5, 30, 30);///glutSolidTeapot(0.3);///TODO:
-    glPopMatrix();///¦Û°ÊÂà«Ü«Ó///TODO:
-    ///glutSolidTeapot(0.3);
+    glPopMatrix();
     glutSwapBuffers();
     angle++;///TODO:
 }
@@ -37,8 +36,8 @@ int main(int argc, char** argv)
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
     glutCreateWindow("week08-2 texture");
     glutDisplayFunc(display);
-    glutIdleFunc(display);///TODO:
-    glEnable(GL_DEPTH_TEST);///TODO: ¦³3Dªº²`«×´ú¸Õ(«e­±·|»\±¼«á­±)
-    init();///¤W­±§âOpenGL³£³]¦n«á, ¤~³]©w OpenCV ªº¶K¹Ï¨ì OpenGL¤W­±
+    glutIdleFunc(display);
+    glEnable(GL_DEPTH_TEST);
+    init();///ä¸Šé¢æŠŠOpenGLéƒ½è¨­å¥½å¾Œ, æ‰è¨­å®š OpenCV çš„è²¼åœ–åˆ° OpenGLä¸Šé¢
     glutMainLoop();
 }
